@@ -70,4 +70,52 @@ CREATE TABLE BillInfo
 )
 GO
 
+INSERT INTO Account(userName,displayName,passWord,type)
+VALUES (N'admin',N'admin','1','0')
+INSERT INTO Account(userName,displayName,passWord,type)
+VALUES (N'khanh',N'Hoang Khanh','1','1')
+GO
+
+CREATE PROC USP_GetAccountByUserName
+@username nvarchar(100)
+AS
+BEGIN
+	Select *
+	From Account
+	Where @username=userName
+END
+GO
+
+EXEC USP_GetAccountByUserName @username='admin'
+GO
+
+CREATE PROC USP_Login
+@userName nvarchar(100), @passWord nvarchar(100)
+AS
+BEGIN
+	Select *
+	From Account
+	Where userName=@userName AND passWord=@passWord
+END
+GO
+
+EXEC USP_Login @userName='admin',@passWord='1'
+GO
+
+Declare @i int = 0
+While @i<=10
+BEGIN
+	INSERT TableFood(name) VALUES (N'Bàn' + CAST(@i AS nvarchar(100)))
+	Set @i = @i + 1
+END
+GO
+
+CREATE PROC USP_GetTableList
+AS
+SELECT * FROM TableFood
+GO
+
+EXEC USP_GetTableList
+GO
+
 
