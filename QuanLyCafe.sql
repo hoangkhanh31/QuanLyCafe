@@ -119,3 +119,9 @@ EXEC USP_GetTableList
 GO
 
 
+Select *from Bill
+GO
+Select  *from BillInfo
+
+Select *from Food
+Select *from FoodCategory
