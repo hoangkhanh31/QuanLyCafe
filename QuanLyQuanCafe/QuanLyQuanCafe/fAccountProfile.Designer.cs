@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lbluserName = new System.Windows.Forms.Label();
             this.txbUserName = new System.Windows.Forms.TextBox();
+            this.lbluserName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txbDisplayName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -61,6 +61,14 @@
             this.panel2.Size = new System.Drawing.Size(375, 57);
             this.panel2.TabIndex = 0;
             // 
+            // txbUserName
+            // 
+            this.txbUserName.Location = new System.Drawing.Point(142, 19);
+            this.txbUserName.Name = "txbUserName";
+            this.txbUserName.ReadOnly = true;
+            this.txbUserName.Size = new System.Drawing.Size(205, 20);
+            this.txbUserName.TabIndex = 1;
+            // 
             // lbluserName
             // 
             this.lbluserName.AutoSize = true;
@@ -70,14 +78,6 @@
             this.lbluserName.Size = new System.Drawing.Size(134, 19);
             this.lbluserName.TabIndex = 0;
             this.lbluserName.Text = "Tên Đăng Nhập:";
-            // 
-            // txbUserName
-            // 
-            this.txbUserName.Location = new System.Drawing.Point(142, 19);
-            this.txbUserName.Name = "txbUserName";
-            this.txbUserName.ReadOnly = true;
-            this.txbUserName.Size = new System.Drawing.Size(205, 20);
-            this.txbUserName.TabIndex = 1;
             // 
             // panel1
             // 
@@ -194,6 +194,7 @@
             this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "Cập Nhật";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnExit
             // 
